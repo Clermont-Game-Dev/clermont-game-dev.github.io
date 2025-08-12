@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Clermont Game Dev - Accueil</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/menu.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="menu-placeholder"></div>
+
+<section class="banner">
+    <h1>Bienvenue sur le site de Clermont Game Dev !</h1>
+    <p>Association de création de jeux vidéo clermontoise</p>
+  </section>
+
+  <section id="events-table" class="events">
+    <h2>ÉVÉNEMENTS À VENIR</h2>
+  </section>
+
+<script>
+  fetch('shared/menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-placeholder').insertAdjacentHTML('afterbegin', data);
+    })
+    .catch(err => console.error('Erreur chargement menu :', err));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="scripts/events-script.js"></script>
+</body>
+</html>
