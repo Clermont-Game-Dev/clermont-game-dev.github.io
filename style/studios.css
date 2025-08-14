@@ -1,0 +1,102 @@
+
+    /* Grille centrée avec max 3 colonnes */
+    #studios-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto; /* centrage */
+        padding: 20px;
+    }
+
+.studio-logo {
+    max-height: 80px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+
+.studio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* espace entre haut, milieu, bas */
+    align-items: center;
+    padding: 15px;
+    min-height: 400px; /* hauteur minimum pour que le carrousel soit bien centré */
+    transition: transform 0.3s;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.studio:hover {
+    transform: translateY(-5px);
+}
+    .studio h2 {
+    margin: 5px 0 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.carousel {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement */
+    flex: 1; /* prend l’espace disponible pour rester au centre */
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+.jeu-link {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.jeu-link:hover {
+    color: #005fa3;
+}
