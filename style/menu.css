@@ -1,3 +1,7 @@
+#menu-placeholder {
+  height: 300px;
+}
+
 .navbar-wrapper {
   background-image: url('../img/Banniere-Volcans.jpg');
   background-size: cover;
