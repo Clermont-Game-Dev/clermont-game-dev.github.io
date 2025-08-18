@@ -15,24 +15,19 @@ function formatDateFr(isoDateStr) {
   }).format(date);
 }
 
-// Replace with your actual Spreadsheet ID
-const spreadsheetId = '1a2jL5hG_QCFqq_t2ex855JSznfC7qFAkkTbSujJuDnY';
-
-// Replace with your API Key
-const apiKey = 'AIzaSyBa2tUoN6-TgFe3JxtMenfOlaZJ_lLaJss';
-
 // Construct the URL for Google Sheets API v4
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Events?key=${apiKey}`;
+const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRcJduBMhZgmdA_5j229WofOa5Cs8ZERD1z3F0obyEK4WmAqIMljS6Pfy4EEBHecPbMQrxJENeHvcku/pub?output=csv`;
 
 
 async function fetchGoogleSheetData() {
     try {
         // Fetch data from Google Sheets API
         const response = await fetch(url);
-        const data = await response.json();
+        const data = await response.text();
         
         // Extract rows from the data
-        const rows = data.values;
+        console.log(data.values)
+        const rows = data.trim().split('\n').map(r => r.split(','));
         rows.sort((a, b) => new Date(a[1]) - new Date(b[1]));
         // Get the table body element
 
