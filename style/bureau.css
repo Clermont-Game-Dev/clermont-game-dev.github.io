@@ -1,17 +1,18 @@
 
 .team-container {
-    font-family: Arial, sans-serif;
-  align-items: center;
+  font-family: Arial, sans-serif;
+  align-items: baseline;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 700px;
 }
 
 .card {
   perspective: 1000px;
   width: 200px;
-  height: 250px  !important;
+  height: 250px !important;
   position: relative;
   text-align: center;
     background-color: transparent !important;
@@ -22,6 +23,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 200px !important;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -51,7 +53,7 @@
 
 .card-front img {
   width: 150px;
-  height: 150px;
+  height: 150px !important;
   border-radius: 50%;
   object-fit: cover;
 }

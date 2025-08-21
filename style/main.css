@@ -1,9 +1,11 @@
 body
 {
-  background-image: url('../img/BG-CGD.png');
-  background-position: center 30%;
-  background-size: cover;
-  height: 2000px;
+  background-image: url('/img/BG-CGD.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;     /* l'image reste fixe quand on scroll */
+  background-position: center top;  /* ou center center selon ce que tu veux */
+  background-size: 100% auto;
+  font-size: 16px;
 }
 
 .banner {
@@ -45,12 +47,26 @@ body
       margin: 0.3rem 0;
     }
 
- /*.event a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }*/
+    .text-container
+    {
+      padding: 2rem;
+      margin: 0 20%;
+      font-size: 18px;
+      background-color: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 20px;
+    }
+
+    .text-container i
+    {
+      color:grey;
+    }
+
+    .wrapper
+    {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+    }

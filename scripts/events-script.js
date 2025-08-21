@@ -15,7 +15,6 @@ function formatDateFr(isoDateStr) {
   }).format(date);
 }
 
-// Construct the URL for Google Sheets API v4
 const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRcJduBMhZgmdA_5j229WofOa5Cs8ZERD1z3F0obyEK4WmAqIMljS6Pfy4EEBHecPbMQrxJENeHvcku/pub?output=csv`;
 
 
@@ -29,10 +28,8 @@ async function fetchGoogleSheetData() {
         console.log(data.values)
         const rows = data.trim().split('\n').map(r => r.split(','));
         rows.sort((a, b) => new Date(a[1]) - new Date(b[1]));
-        // Get the table body element
 
         const container = document.getElementById('events-table');
-        // Loop through the rows (starting from row 1 to skip headers)
         for (let i = 1; i < rows.length; i++) {
             
 const placeHTML = rows[i][mapsId]
@@ -54,5 +51,4 @@ const placeHTML = rows[i][mapsId]
     }
 }
 
-// Call the function to fetch and display data
 document.addEventListener('DOMContentLoaded', fetchGoogleSheetData);
