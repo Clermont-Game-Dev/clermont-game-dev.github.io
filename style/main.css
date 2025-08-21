@@ -1,6 +1,6 @@
 body
 {
-  background-image: url('./img/BG-CGD.png');
+  background-image: url('../img/BG-CGD.png');
   background-repeat: no-repeat;
   background-attachment: fixed;     /* l'image reste fixe quand on scroll */
   background-position: center top;  /* ou center center selon ce que tu veux */
