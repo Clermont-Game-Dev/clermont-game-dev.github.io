@@ -25,7 +25,6 @@ async function fetchGoogleSheetData() {
         const data = await response.text();
         
         // Extract rows from the data
-        console.log(data.values)
         const rows = data.trim().split('\n').map(r => r.split(','));
         rows.sort((a, b) => new Date(a[1]) - new Date(b[1]));
 
