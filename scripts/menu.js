@@ -1,4 +1,4 @@
-  fetch('/CGD-Website/shared/menu.html')
+  fetch('../shared/menu.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('menu-placeholder').insertAdjacentHTML('afterbegin', data);
