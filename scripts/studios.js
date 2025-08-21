@@ -1,32 +1,75 @@
 const studios = [
     {
-        nom: "Lilac",
-        logo: "img/studios/lilac/Lilac 0_Logo.png",
+        nom: "Bimi Cerika",
+        logo: "img/studios/bimi_cerika/Logo_FR.png",
         jeux: [
-            { nom: "Lilac 0", img: "img/studios/lilac/Lilac0_MainCapsule_1232x706.png", steam: "" }
+            { nom: "1001 Vies", img: "img/studios/bimi_cerika/1001_Vies.png", link: "https://store.steampowered.com/app/4" }
+        ]
+    },
+    {
+        nom: "Camille",
+        logo: "img/studios/camille/Logo_ZS001.png",
+        jeux: [
+            { nom: "Zoeufs Story", img: "img/studios/camille/MenuPrincipal001.png", link: "" }
+        ]
+    },
+    {
+        nom: "Digital Pourpre",
+        logo: "https://placehold.co/600x400?text=Digital Pourpre Logo",
+        jeux: [
+            { nom: "Undead Smasher", img: "https://placehold.co/1232x706?text=Undead Smasher", link: "" },
+            { nom: "Arise From Shadows", img: "https://placehold.co/1232x706?text=Arise From Shadows", link: "" }
+        ]
+    },
+    {
+        nom: "Gravenoire",
+        logo: "https://placehold.co/600x400?text=Gravenoire Logo",
+        jeux: [
+            { nom: "Labyban", img: "https://placehold.co/1232x706?text=Labyban", link: "" },
+            { nom: "Ataraxie", img: "https://placehold.co/1232x706?text=Ataraxie", link: "" }
+        ]
+    },
+    {
+        nom: "Kidness",
+        logo: "img/studios/kyma/Logo-Kyma.png",
+        jeux: [
+            { nom: "Kyma", img: "img/studios/kyma/Capsule.png", link: "" }
+        ]
+    },
+    {
+        nom: "Nobrain Studio",
+        logo: "img/studios/nobrain/nobrain-studio-logo-256.png",
+        jeux: [
+            { nom: "Zoo Island", img: "img/studios/nobrain/zoo_island_store_capsule_main_1232x706.png", link: "" }
+        ]
+    },
+    {
+        nom: "Nox",
+        logo: "img/studios/nox/logo_carre_fond_noir.png",
+        jeux: [
+            { nom: "Nox Stories", img: "img/studios/nox/Visuel_rectangle.png", link: "" }
         ]
     },
     {
         nom: "Sleepy Giant Creations",
-        logo: "https://placehold.co/80x80?text=SG",
+        logo: "img/studios/sleepygiant/SGlogo transparent noir@4x.png",
         jeux: [
-            { nom: "Chill Fishing", img: "https://placehold.co/600x400?text=Chill Fishing", steam: "https://store.steampowered.com/app/4" },
-            { nom: "Amato", img: "https://placehold.co/600x400?text=Amato", steam: "https://store.steampowered.com/app/4" }
+            { nom: "Chill Fishing", img: "img/studios/sleepygiant/Goldmine.png", link: "https://store.steampowered.com/app/4" },
+            { nom: "Amato", img: "img/studios/sleepygiant/HighresScreenshot00001.jpg", link: "https://store.steampowered.com/app/4" }
         ]
     },
     {
-        nom: "Empty",
-        logo: "https://placehold.co/80x80?text=E",
+        nom: "Softail",
+        logo: "img/studios/softail/Softail_Blanc.png",
         jeux: [
-            { nom: "Jeu A", img: "https://placehold.co/600x400?text=Jeu+A", steam: "https://store.steampowered.com/app/4" }
+            { nom: "Night Lurker", img: "img/studios/softail/NightLurker.png", link: "https://store.steampowered.com/app/4" }
         ]
     },
     {
-        nom: "Empty",
-        logo: "https://placehold.co/80x80?text=E",
+        nom: "Victor",
+        logo: "img/studios/victor/Lilac 0_Logo.png",
         jeux: [
-            { nom: "Jeu A", img: "https://placehold.co/600x400?text=Jeu+A", steam: "https://store.steampowered.com/app/4" },
-            { nom: "Jeu B", img: "https://placehold.co/600x400?text=Jeu+B", steam: "https://store.steampowered.com/app/4" }
+            { nom: "Lilac 0", img: "img/studios/victor/Lilac0_MainCapsule_1232x706.png", link: "" }
         ]
     }
 ];
@@ -38,17 +81,18 @@ studios.forEach(studio => {
     const studioDiv = document.createElement("div");
     studioDiv.classList.add("studio");
 
-    // Logo
-    const logo = document.createElement("img");
-    logo.classList.add("studio-logo");
-    logo.src = studio.logo || "https://placehold.co/80x80?text=LOGO";
-    logo.alt = `Logo de ${studio.nom}`;
-    studioDiv.appendChild(logo);
-
     // Nom du studio
     const title = document.createElement("h2");
     title.textContent = studio.nom;
     studioDiv.appendChild(title);
+    
+    // Logo
+    /*
+    const logo = document.createElement("img");
+    logo.classList.add("studio-logo");
+    logo.src = studio.logo || "https://placehold.co/80x80?text=LOGO";
+    logo.alt = `Logo de ${studio.nom}`;
+    studioDiv.appendChild(logo);*/
 
     if (studio.jeux.length > 1) {
         // Wrapper pour centrer verticalement
@@ -79,7 +123,7 @@ studios.forEach(studio => {
 
         // Nom du jeu cliquable en bas
         const jeuLink = document.createElement("a");
-        jeuLink.href = studio.jeux[0].steam;
+        jeuLink.href = studio.jeux[0].link;
         jeuLink.target = "_blank";
         jeuLink.textContent = studio.jeux[0].nom;
         jeuLink.classList.add("jeu-link");
@@ -91,7 +135,7 @@ studios.forEach(studio => {
         function updateNomJeu() {
             const index = position % totalSlides;
             jeuLink.textContent = studio.jeux[index].nom;
-            jeuLink.href = studio.jeux[index].steam;
+            jeuLink.href = studio.jeux[index].link;
         }
 
         // Boutons
@@ -141,7 +185,7 @@ studios.forEach(studio => {
 
         // Nom du jeu en bas
         const jeuLink = document.createElement("a");
-        jeuLink.href = studio.jeux[0].steam;
+        jeuLink.href = studio.jeux[0].link;
         jeuLink.target = "_blank";
         jeuLink.textContent = studio.jeux[0].nom;
         jeuLink.classList.add("jeu-link");
