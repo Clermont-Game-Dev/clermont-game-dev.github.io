@@ -8,6 +8,12 @@ body
   font-size: 16px;
 }
 
+@media (max-aspect-ratio: 1/1) {
+  body {
+    background-size: auto 100%;
+  }
+}
+
 .banner {
       background-color: #44444471;
       color: white;
