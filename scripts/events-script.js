@@ -27,27 +27,31 @@ async function fetchGoogleSheetData() {
         // Extract rows from the data
         const rows = data.trim().split('\n').map(r => r.split(','));
         rows.sort((a, b) => new Date(a[1]) - new Date(b[1]));
+        
+        const aujourdHui = new Date();
+
+        const futurs = rows.filter(item => new Date(item[1]) > aujourdHui);
 
         const container = document.getElementById('events-table');
-        for (let i = 1; i < rows.length; i++) {
+        for (let i = 1; i < futurs.length; i++) {
             
-const placeHTML = rows[i][mapsId]
-  ? `<a href="${rows[i][mapsId]}" target="_blank" rel="noopener noreferrer">${rows[i][placeId]}</a>`
-  : rows[i][placeId];
+        const placeHTML = futurs[i][mapsId]
+          ? `<a href="${futurs[i][mapsId]}" target="_blank" rel="noopener noreferrer">${futurs[i][placeId]}</a>`
+          : futurs[i][placeId];
 
-            const eventHTML = `
-                <div class="event">
-                    <h2>${rows[i][iconId]} ${rows[i][titleId]}</h2>
-                    <p><strong>Date :</strong> ${formatDateFr(rows[i][dateId])}</p>
-                    <p><strong>Lieu :</strong> ${placeHTML}</p>
-                </div>
-                `;
+                    const eventHTML = `
+                        <div class="event">
+                            <h2>${futurs[i][iconId]} ${futurs[i][titleId]}</h2>
+                            <p><strong>Date :</strong> ${formatDateFr(futurs[i][dateId])}</p>
+                            <p><strong>Lieu :</strong> ${placeHTML}</p>
+                        </div>
+                        `;
 
-                container.insertAdjacentHTML('beforeend', eventHTML);
+                        container.insertAdjacentHTML('beforeend', eventHTML);
+                }
+            } catch (error) {
+                console.error('Error fetching Google Sheets data:', error);
+            }
         }
-    } catch (error) {
-        console.error('Error fetching Google Sheets data:', error);
-    }
-}
 
 document.addEventListener('DOMContentLoaded', fetchGoogleSheetData);
