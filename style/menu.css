@@ -1,13 +1,13 @@
 #menu-placeholder {
-  height: 300px;
+  height: 250px;
 }
 
 .navbar-wrapper {
-  background-image: url('../img/Banniere-Volcans.jpg');
+  background-image: url('../img/Banniere.png');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 250px;
   width: 100%;
   position: relative;
 }
@@ -23,7 +23,7 @@
 }
 
 .nav-link-white:hover {
-  color: #dddddd !important;
+  color: #333 !important;
 }
 
 .nav-item
@@ -34,7 +34,7 @@
 
 #Logo
 {
-  height: 200px;
+  height: 150px;
 }
 
 .btn-social {
@@ -75,7 +75,7 @@
 .menu ul li span {
   display: block;
   padding: 10px 15px;
-  color: white;
+  color: black;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
