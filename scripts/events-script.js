@@ -33,7 +33,7 @@ async function fetchGoogleSheetData() {
         const futurs = rows.filter(item => new Date(item[1]) > aujourdHui);
 
         const container = document.getElementById('events-table');
-        for (let i = 1; i < futurs.length; i++) {
+        for (let i = 0; i < futurs.length; i++) {
             
         const placeHTML = futurs[i][mapsId]
           ? `<a href="${futurs[i][mapsId]}" target="_blank" rel="noopener noreferrer">${futurs[i][placeId]}</a>`
