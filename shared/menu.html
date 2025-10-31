@@ -1,48 +1,36 @@
-<div class="navbar-wrapper position-relative">
-  <!-- Menu centré sur la bannière -->
-  <nav class="navbar navbar-expand-lg navbar-custom h-100 d-flex align-items-center">
-    <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-        <img id="Logo" src="./img/LogoCGD_Noir2.png" alt="Logo">
-      </a>
+<header class="menu">
+  <img src="../img/LogoCGD_Blanc.png" alt="Logo" class="logo">
+  
+  <!-- bouton burger pour mobile -->
+  <button class="burger" aria-label="Menu">&#9776;</button>
 
-      <div id="menu-boutons" class="d-flex flex-column align-items-end gap-2">
-        
-        <!-- Réseaux sociaux -->
-        <div class="d-flex gap-2">
-          <a href="https://www.linkedin.com/company/clermont-game-dev" class="btn-social btn" target="_blank">
-            <img src="./img/media/linkedin-brands-solid.svg"></i>
-          </a>
-          <a href="https://www.facebook.com/clermontgamedev/" class="btn-social btn" target="_blank">
-            <img src="./img/media/facebook-brands-solid.svg"></i>
-          </a>
-          <a href="https://www.instagram.com/clermontgamedev/" class="btn btn-social" target="_blank">
-            <img src="./img/media/instagram-brands-solid.svg"></i>
-          </a>
-          <a href="https://discord.gg/gQjfSdVWGZ" class="btn btn-social" target="_blank">
-            <img src="./img/media/discord-brands-solid.svg"></i>
-          </a>
-        </div>
-
-        <!-- Boutons menu -->
-        <div class="collapse navbar-collapse show justify-content-end" style="margin-top: 50px;">
-          <ul class="navbar-nav gap-3">
-            <li class="nav-item"><a class="nav-link nav-link-white fw-bold" href=".">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-white fw-bold" href="./bureau.html">Bureau</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-white fw-bold" href="./studios.html">Studios</a></li>
-            <li class="nav-item"><a class="nav-link nav-link-white fw-bold" href="./gamejams.html">GameJams</a></li>
-            <!--<li class="dropdown nav-item">
-              <span class="nav-link nav-link-white fw-bold">Evenements</span>
-              <ul class="dropdown-content">
-                <li><a href="/events_type/salons.html">Salons</a></li>
-                <li><a href="/events_type/gamejams.html">Game Jams</a></li>
-              </ul>
-            </li>-->
-          </ul>
-        </div>
-
-      </div>
-    </div>
+  <nav class="nav">
+    <a href=".">Accueil</a>
+    <a href="./bureau.html">Bureau</a>
+    <a href="./studios.html">Studios</a>
+    <a href="./gamejams.html">GameJams</a>
   </nav>
-</div>
+  <nav class="social-nav">
+    <a href="https://www.linkedin.com/company/clermont-game-dev" target="_blank">
+      <img src="./img/media/linkedin-brands-solid.svg" class="invert"></i>
+    </a>
+    <a href="https://www.facebook.com/clermontgamedev/" target="_blank">
+      <img src="./img/media/facebook-brands-solid.svg" class="invert"></i>
+    </a>
+    <a href="https://www.instagram.com/clermontgamedev/" target="_blank">
+      <img src="./img/media/instagram-brands-solid.svg" class="invert"></i>
+    </a>
+    <a href="https://discord.gg/gQjfSdVWGZ" target="_blank">
+      <img src="./img/media/discord-brands-solid.svg" class="invert"></i>
+    </a>
+  </nav>
+</header>
+
+<script>
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+
+burger.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
+</script>
