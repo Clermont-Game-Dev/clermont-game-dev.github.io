@@ -1,5 +1,6 @@
 
-    /* Grille centrée avec max 3 colonnes */
+  
+  /* Grille centrée avec max 3 colonnes */
     #studios-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -24,11 +25,10 @@
     padding: 15px;
     min-height: 350px;
     transition: transform 0.3s;
-
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
+    background: var(--neutral-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    
 }
 
 .studio img
@@ -39,10 +39,12 @@
 .studio:hover {
     transform: translateY(-5px);
 }
-    .studio h2 {
-    margin: 5px 0 10px 0;
-    font-size: 1.2rem;
+.studio h2 {
+    margin: 5px 0 -10px 0;
+    font-size: 1.5rem;
     text-align: center;
+    text-decoration: underline;
+    font-family: 'GillSans', sans-serif;
 }
 
 .carousel {
@@ -96,8 +98,8 @@
 
 .jeu-link {
     margin-top: 10px;
-    font-weight: bold;
-    color: var(--item-color);
+    font-size: 1.4rem;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
 }

@@ -1,8 +1,9 @@
 :root {
   --primary-color: #FF640A;
-  --background-color: #E15809;
+  --background-color: #f9975f;
   --item-color: #805A45;
   --hover-item-color: #BF6937;
+  --neutral-color: #F5F5F5;
 }
 
 @font-face {
@@ -12,19 +13,33 @@
     font-style: normal;
 }
 
+html
+{
+  height: 100%;
+}
+
 body
 {
-  background: linear-gradient(to bottom, var(--background-color), var(--primary-color));
+  height: 100%;
   font-size: 16px;
   font-family: 'GillSans', sans-serif !important;
+}
+
+.under-menu
+{ 
+  min-height: 80vh ;
+  height: auto ;
+  padding-bottom: 30px;
+  margin-top: -30px ;
+  background: linear-gradient(to bottom, var(--primary-color), var(--background-color)) !important;
 }
 
 
 .banner {
       background-color: var(--item-color);
-      color: white;
+      color: var(--neutral-color);
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 2rem 1rem;
       margin: 30px 20%;
       border-radius: 12px;
     }
@@ -44,7 +59,7 @@ body
     }
 
     .event {
-      background-color: white;
+      background-color: var(--neutral-color);
       padding: 1.5rem;
       margin-bottom: 1rem;
       border-left: 10px solid var(--hover-item-color);
@@ -66,7 +81,7 @@ body
       padding: 2rem;
       margin: 0 20%;
       font-size: 18px;
-      background-color: white;
+      background-color: var(--neutral-color);
       padding: 1.5rem;
       margin-bottom: 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
