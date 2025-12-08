@@ -66,7 +66,25 @@ body
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-bottom-right-radius: 40px;
       border-top-right-radius: 40px;
+      align-items: center;
+      display: flex;
+      gap: 20px;
     }
+    
+
+.event-left {
+  min-width: 250px;
+    width: 30%; /* ou une autre taille fixe */
+    flex-shrink: 0;
+}
+
+.event-right {
+    flex: 1; /* occupe la moitié droite */
+}
+
+.event-right p{
+    margin: auto;
+}
 
     .event h2 {
       margin-top: 0;

@@ -41,9 +41,15 @@ async function fetchGoogleSheetData() {
 
                     const eventHTML = `
                         <div class="event">
+                          <div class="event-left">
                             <h2>${futurs[i][iconId]} ${futurs[i][titleId]}</h2>
                             <p><strong>Date :</strong> ${formatDateFr(futurs[i][dateId])}</p>
                             <p><strong>Lieu :</strong> ${placeHTML}</p>
+                          </div>
+
+                          <div class="event-right">
+                            <p>${futurs[i][descriptionId]}</p>
+                          </div>
                         </div>
                         `;
 
