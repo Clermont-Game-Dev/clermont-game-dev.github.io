@@ -30,9 +30,11 @@ async function fetchGoogleSheetData() {
         
         const aujourdHui = new Date();
 
-        const futurs = rows.filter(item => new Date(item[1]) > aujourdHui);
+        const futurs = rows.filter(item => new Date(item[1]) >= aujourdHui);
+        const passes = rows.filter(item => new Date(item[1]) < aujourdHui).sort((a, b) => new Date(b[1]) - new Date(a[1]));
 
-        const container = document.getElementById('events-table');
+
+        const containerF = document.getElementById('events-futures');
         for (let i = 0; i < futurs.length; i++) {
             
         const placeHTML = futurs[i][mapsId]
@@ -41,13 +43,42 @@ async function fetchGoogleSheetData() {
 
                     const eventHTML = `
                         <div class="event">
+                          <div class="event-left">
                             <h2>${futurs[i][iconId]} ${futurs[i][titleId]}</h2>
                             <p><strong>Date :</strong> ${formatDateFr(futurs[i][dateId])}</p>
                             <p><strong>Lieu :</strong> ${placeHTML}</p>
+                          </div>
+
+                          <div class="event-right">
+                            <p>${futurs[i][descriptionId]}</p>
+                          </div>
                         </div>
                         `;
 
-                        container.insertAdjacentHTML('beforeend', eventHTML);
+                        containerF.insertAdjacentHTML('beforeend', eventHTML);
+                }
+
+        const containerP = document.getElementById('events-passes');
+        for (let i = 0; i < passes.length; i++) {
+            
+        const placeHTML = passes[i][mapsId]
+          ? `<a href="${passes[i][mapsId]}" target="_blank" rel="noopener noreferrer">${passes[i][placeId]}</a>`
+          : passes[i][placeId];
+                    const eventHTML = `
+                        <div class="event">
+                          <div class="event-left">
+                            <h2>${passes[i][iconId]} ${passes[i][titleId]}</h2>
+                            <p><strong>Date :</strong> ${formatDateFr(passes[i][dateId])}</p>
+                            <p><strong>Lieu :</strong> ${placeHTML}</p>
+                          </div>
+
+                          <div class="event-right">
+                            <p>${passes[i][descriptionId]}</p>
+                          </div>
+                        </div>
+                        `;
+
+                        containerP.insertAdjacentHTML('beforeend', eventHTML);
                 }
             } catch (error) {
                 console.error('Error fetching Google Sheets data:', error);
