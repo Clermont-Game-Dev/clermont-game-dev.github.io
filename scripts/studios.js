@@ -3,7 +3,7 @@ const studios = [
         nom: "Bimi Cerika",
         logo: "img/studios/bimi_cerika/Logo_FR.png",
         jeux: [
-            { nom: "1001 Vies", img: "img/studios/bimi_cerika/1001_Vies.png", link: "https://store.steampowered.com/app/4" }
+            { nom: "1001 Vies", img: "img/studios/bimi_cerika/1001_Vies.png", link: " https://bimicerika.itch.io/1001-vies" }
         ]
     },
     {
@@ -17,59 +17,60 @@ const studios = [
         nom: "Digital Pourpre",
         logo: "https://placehold.co/600x400?text=Digital Pourpre Logo",
         jeux: [
-            { nom: "Undead Smasher", img: "https://placehold.co/1232x706?text=Undead Smasher", link: "" },
-            { nom: "Arise From Shadows", img: "https://placehold.co/1232x706?text=Arise From Shadows", link: "" }
+            { nom: "Undead Smasher", img: "https://placehold.co/1232x706?text=Undead Smasher", link: "https://digitalpourprestudio.com/" },
+            { nom: "Arise From Shadows", img: "https://placehold.co/1232x706?text=Arise From Shadows", link: "https://digitalpourprestudio.com/" }
         ]
     },
     {
         nom: "Gravenoire",
         logo: "https://placehold.co/600x400?text=Gravenoire Logo",
         jeux: [
-            { nom: "Labyban", img: "https://placehold.co/1232x706?text=Labyban", link: "" },
-            { nom: "Ataraxie", img: "https://placehold.co/1232x706?text=Ataraxie", link: "" }
+            { nom: "Labyban", img: "https://placehold.co/1232x706?text=Labyban", link: "https://gravenoire.fr/" },
+            { nom: "Ataraxie", img: "https://placehold.co/1232x706?text=Ataraxie", link: "https://gravenoire.fr/" }
         ]
     },
     {
         nom: "Kidness",
         logo: "img/studios/kyma/Logo-Kyma.png",
         jeux: [
-            { nom: "Kyma", img: "img/studios/kyma/Capsule.png", link: "" }
+            { nom: "Kyma", img: "img/studios/kyma/Capsule.png", link: "https://store.steampowered.com/app/1397300/Kyma/" }
         ]
     },
     {
         nom: "Nobrain Studio",
         logo: "img/studios/nobrain/nobrain-studio-logo-256.png",
         jeux: [
-            { nom: "Zoo Island", img: "img/studios/nobrain/zoo_island_store_capsule_main_1232x706.png", link: "" }
+            { nom: "Zoo Island", img: "img/studios/nobrain/zoo_island_store_capsule_main_1232x706.png", link: "https://www.nobrain-studio.com/" }
         ]
     },
     {
         nom: "Nox",
         logo: "img/studios/nox/logo_carre_fond_noir.png",
         jeux: [
-            { nom: "Nox Stories", img: "img/studios/nox/Visuel_rectangle.png", link: "" }
+            { nom: "Nox Stories", img: "img/studios/nox/Visuel_rectangle.png", link: "https://www.noxstories.com/" }
         ]
     },
     {
         nom: "Sleepy Giant Creations",
         logo: "img/studios/sleepygiant/SGlogo transparent noir@4x.png",
         jeux: [
-            { nom: "Chill Fishing", img: "img/studios/sleepygiant/Goldmine.png", link: "https://store.steampowered.com/app/4" },
-            { nom: "Amato", img: "img/studios/sleepygiant/HighresScreenshot00001.jpg", link: "https://store.steampowered.com/app/4" }
+            { nom: "Chill Fishing", img: "img/studios/sleepygiant/Goldmine.png", link: "https://store.steampowered.com/developer/SleepyGiantCreation" },
+            { nom: "Amato", img: "img/studios/sleepygiant/Amato.jpg", link: "https://store.steampowered.com/developer/SleepyGiantCreation" },
+            { nom: "Super Smiling Dungeon", img: "img/studios/sleepygiant/SuperSmilingDungeon.png", link: "https://store.steampowered.com/developer/SleepyGiantCreation" }
         ]
     },
     {
         nom: "Softail",
         logo: "img/studios/softail/Softail_Blanc.png",
         jeux: [
-            { nom: "Night Lurker", img: "img/studios/softail/NightLurker.png", link: "https://store.steampowered.com/app/4" }
+            { nom: "Night Lurker", img: "img/studios/softail/NightLurker.png", link: "https://store.steampowered.com/app/3973720/Night_Lurker/" }
         ]
     },
     {
         nom: "Victor",
         logo: "img/studios/victor/Lilac 0_Logo.png",
         jeux: [
-            { nom: "Lilac 0", img: "img/studios/victor/Lilac0_MainCapsule_1232x706.png", link: "" }
+            { nom: "Lilac 0", img: "img/studios/victor/Lilac0_MainCapsule_1232x706.png", link: "https://store.steampowered.com/app/3316380/Lilac_0/" }
         ]
     }
 ];
