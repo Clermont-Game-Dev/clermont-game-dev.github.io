@@ -1,32 +1,43 @@
 const studios = [
     {
+        nom: "BD Craft",
+        logo: "img/studios/bdcraft/Logo_Card.png",
+        jeux: [
+            { nom: "BD Craft", img: "img/studios/bdcraft/Logo_Card.png", link: "https://bdcraft.net/" }
+        ]
+    },
+    {
         nom: "Bimi Cerika",
         logo: "img/studios/bimi_cerika/Logo_FR.png",
         jeux: [
-            { nom: "1001 Vies", img: "img/studios/bimi_cerika/1001_Vies.png", link: " https://bimicerika.itch.io/1001-vies" }
+            { nom: "1001 Vies", img: "img/studios/bimi_cerika/1001_Vies.png", link: "https://bimicerika.itch.io/1001-vies" }
         ]
     },
     {
         nom: "Camille",
         logo: "img/studios/camille/Logo_ZS001.png",
         jeux: [
-            { nom: "Zoeufs Story", img: "img/studios/camille/MenuPrincipal001.png", link: "" }
+            { nom: "Zoeufs Story", img: "img/studios/camille/MenuPrincipal001.png", link: "https://store.steampowered.com/app/4916280/" }
         ]
     },
     {
         nom: "Digital Pourpre",
         logo: "https://placehold.co/600x400?text=Digital Pourpre Logo",
         jeux: [
-            { nom: "Undead Smasher", img: "https://placehold.co/1232x706?text=Undead Smasher", link: "https://digitalpourprestudio.com/" },
-            { nom: "Arise From Shadows", img: "https://placehold.co/1232x706?text=Arise From Shadows", link: "https://digitalpourprestudio.com/" }
+            { nom: "Arise From Shadows", img: "img/studios/digitalpourpre/Arise_From_Shadows.jpg", link: "https://store.steampowered.com/app/2108640/Arise_from_Shadows/" },
+            { nom: "Undead Smasher", img: "img/studios/digitalpourpre/Undead_Smasher.jpg", link: "https://digitalpourprestudio.com/articles/undead-smasher.html" },
+            { nom: "Frosty Rush", img: "img/studios/digitalpourpre/Frosty_Rush.png", link: "https://digitalpourprestudio.com/articles/frosty-rush.html" },
+            { nom: "Chef's Blade", img: "img/studios/digitalpourpre/Chefs_Blade.png", link: "https://digitalpourprestudio.com/articles/chefs-blade.html" },
+            { nom: "Azay Play", img: "img/studios/digitalpourpre/Azay_Play.png", link: "https://digitalpourprestudio.com/articles/azay-play.html" },
+            { nom: "C.vélo", img: "img/studios/digitalpourpre/CVelo.png", link: "https://digitalpourprestudio.com/articles/cvelo.html" }
         ]
     },
     {
         nom: "Gravenoire",
         logo: "https://placehold.co/600x400?text=Gravenoire Logo",
         jeux: [
-            { nom: "Labyban", img: "https://placehold.co/1232x706?text=Labyban", link: "https://gravenoire.fr/" },
-            { nom: "Ataraxie", img: "https://placehold.co/1232x706?text=Ataraxie", link: "https://gravenoire.fr/" }
+            { nom: "Labyban", img: "img/studios/gravenoire/Labyban.jpg", link: "https://store.steampowered.com/app/3541880/LABYBAN/" },
+            { nom: "Ataraxie", img: "img/studios/gravenoire/Ataraxie.jpg", link: "https://store.steampowered.com/app/2599560/Ataraxie/" }
         ]
     },
     {
@@ -54,9 +65,9 @@ const studios = [
         nom: "Sleepy Giant Creations",
         logo: "img/studios/sleepygiant/SGlogo transparent noir@4x.png",
         jeux: [
-            { nom: "Chill Fishing", img: "img/studios/sleepygiant/Goldmine.png", link: "https://store.steampowered.com/developer/SleepyGiantCreation" },
-            { nom: "Amato", img: "img/studios/sleepygiant/Amato.jpg", link: "https://store.steampowered.com/developer/SleepyGiantCreation" },
-            { nom: "Super Smiling Dungeon", img: "img/studios/sleepygiant/SuperSmilingDungeon.png", link: "https://store.steampowered.com/developer/SleepyGiantCreation" }
+            { nom: "Chill Fishing", img: "img/studios/sleepygiant/Goldmine.png", link: "https://store.steampowered.com/app/3473870/CHILL_FISHING/" },
+            { nom: "Amato", img: "img/studios/sleepygiant/Amato.jpg", link: "https://store.steampowered.com/app/3698590/Amato/" },
+            { nom: "Super Smiling Dungeon", img: "img/studios/sleepygiant/SuperSmilingDungeon.png", link: "https://store.steampowered.com/app/3539970/Super_Smiling_Dungeon/" }
         ]
     },
     {
@@ -64,6 +75,13 @@ const studios = [
         logo: "img/studios/softail/Softail_Blanc.png",
         jeux: [
             { nom: "Night Lurker", img: "img/studios/softail/NightLurker.png", link: "https://store.steampowered.com/app/3973720/Night_Lurker/" }
+        ]
+    },
+    {
+        nom: "Sucre Discret",
+        logo: "img/studios/sucrediscret/Billion_Citizens.jpg",
+        jeux: [
+            { nom: "Billion Citizens", img: "img/studios/sucrediscret/Billion_Citizens.jpg", link: "https://store.steampowered.com/app/4533070/Billion_Citizens/" }
         ]
     },
     {
@@ -119,6 +137,8 @@ studios.forEach(studio => {
         track.appendChild(firstClone);
 
         carousel.appendChild(track);
+        track.style.cursor = "pointer";
+        track.onclick = () => window.open(studio.jeux[position % totalSlides].link, "_blank");
         carouselWrapper.appendChild(carousel);
         studioDiv.appendChild(carouselWrapper);
 
@@ -182,6 +202,10 @@ studios.forEach(studio => {
         img.src = studio.jeux[0].img;
         img.style.width = "100%";
         img.style.borderRadius = "10px";
+        if (studio.jeux[0].link) {
+            img.style.cursor = "pointer";
+            img.onclick = () => window.open(studio.jeux[0].link, "_blank");
+        }
         studioDiv.appendChild(img);
 
         // Nom du jeu en bas
