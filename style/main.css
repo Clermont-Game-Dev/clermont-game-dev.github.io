@@ -111,6 +111,49 @@ body
       color:grey;
     }
 
+    .jam-intro
+    {
+      margin-top: 30px;
+    }
+
+    .jam
+    {
+      display: flow-root;
+    }
+
+    .jam-poster
+    {
+      float: right;
+      width: 340px;
+      max-width: 45%;
+      margin: 0 0 1rem 1rem;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px)
+    {
+      .jam-poster
+      {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto 1rem;
+      }
+    }
+    .jam-winner
+    {
+      width: 315px;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
+    .jam-authors
+    {
+      color: grey;
+      font-style: italic;
+    }
     .wrapper
     {
       width: 100%;
