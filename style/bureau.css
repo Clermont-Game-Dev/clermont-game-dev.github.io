@@ -1,7 +1,7 @@
 
 .team-container {
   font-family: Arial, sans-serif;
-  align-items: baseline;
+  align-items: flex-start;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@
 .card {
   perspective: 1000px;
   width: 200px;
-  height: 250px !important;
+  height: 280px !important;
   position: relative;
   text-align: center;
     background-color: transparent !important;
@@ -48,12 +48,17 @@
 }
 
 .card-front {
-  background-color: var(--item-color);
+  background-color: transparent;
+  box-shadow: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0;
 }
 
 .card-front img {
-  width: 150px;
-  height: 150px !important;
+  width: 200px;
+  height: 200px !important;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -68,28 +73,12 @@
   justify-content: center;
 }
 
-.card-name {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 5px 10px;
-  font-size: 18px;
-  color: #fff;
-  background-color: rgba(0,0,0,0.6);
-  border-radius: 10px;
-  user-select: text;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
 .card-role {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 4px 8px;
-  background-color: rgba(0,0,0,0.6);
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-size: 14px;
+  line-height: 1.2;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  pointer-events: none;
 }
