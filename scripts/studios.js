@@ -17,7 +17,7 @@ const studios = [
         nom: "Camille",
         logo: "img/studios/camille/Logo_ZS001.png",
         jeux: [
-            { nom: "Zoeufs Story", img: "img/studios/camille/MenuPrincipal001.png", link: "https://store.steampowered.com/app/4916280/" }
+            { nom: "Zoeufs Story", img: "img/studios/camille/BaniereZSA_01.png", link: "https://store.steampowered.com/app/4916280/" }
         ]
     },
     {
